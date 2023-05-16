@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Chat App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/6en8XCp+HHAAK5GSLf2xlYtvJ8U2Q4U+9cuEnJoa3" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="left-sidebar">
+            <!-- Add content for the left sidebar here -->
+            <div class="form-group text-center">
+                <button id="new-chat-button" class="btn btn btn-success btn-block btn-sm"><i class="fas fa-plus"></i> New Chat</button>
+            </div>
+            <div class="form-group">
+                <input type="text" id="search-input" class="form-control" placeholder="Search">
+            </div>
+            <div class="form-group text-left left-sidebar-history">
+            </div>
+            <div class="form-group text-center">
+                <button id="clear-chat-button" class="btn btn btn-danger btn-block btn-sm"><i class="fas fa-trash"></i> Clear Chats</button>
+            </div>
+
+        </div>
+
+        <div class="chat-container">
+            <div id="chat-history" class="chat-history">
+
+
+
+            </div>
+            <textarea id="message-input" class="form-control" rows="3" placeholder="Type your message and hit enter..."></textarea>            
+            <button id="send-message" class="btn btn-primary mt-2" style="display: none;">Send</button>
+
+
+            
+        </div>
+
+        <div class="right-sidebar">
+            <div class="form-group">
+                <label for="model-selector">Choose Model:</label>
+                <select class="form-control" id="model-selector">
+                    <option value="gpt-3.5-turbo">GPT-3.5-turbo</option>
+                    <option value="gpt-4">GPT-4</option>                    
+                </select>
+            </div>
+            <!-- Add more content for the right sidebar here -->
+            
+            <div class="form-group">
+                <label for="temperature-slider">Temperature:</label><input type="text" id="temperature-input" style="width: 50px;border: none;" name="temperature" min="0" max="1" step="0.1" value="0.7">
+                <input type="range" class="form-control-range" id="temperature-slider" min="0" max="1" step="0.1" value="0.7">
+                
+            </div>
+            
+            <div class="form-group">
+                <label for="max-length-slider">Max Token:</label><input type="text" id="max-length-input" style="width: 50px;border: none;" name="maxlengthinput" min="1" max="2048" value="1000">
+                <input type="range" class="form-control-range" id="max-length-slider" min="1" max="2048" value="1000">
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@12.0.4/dist/markdown-it.min.js"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+    <script>
+        // Initialize Prism.js after the page has loaded
+        document.addEventListener('DOMContentLoaded', function() {
+          Prism.highlightAll();
+        });
+    </script>
+      
+
+
+</body>
+</html>
