@@ -1,6 +1,6 @@
 # ChatGPT Flask App
 
-This ChatGPT Flask App is a web-based chat interface powered by OpenAI's GPT-3.5-turbo and GPT-4 models. It provides an improved user interface and enhanced historical chat management compared to the ChatGPT app available on the OpenAI website. Users can have interactive conversations with the AI model, save and load chat history, rename and delete chat files, and customize the model and parameters.
+This ChatGPT Flask App is a web-based chat interface powered by OpenAI. It provides an improved user interface and enhanced historical chat management compared to the ChatGPT app available on the OpenAI website. Users can have interactive conversations with the AI model, save and load chat history, rename and delete chat files, and customize the model and parameters.
 
 ## Features
 
